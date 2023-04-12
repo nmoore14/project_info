@@ -12,6 +12,16 @@ export default createRouter({
       path: '/admin',
       name: 'admin',
       component: () => import('@/views/admin/Admin.vue'),
+      children: [
+        {
+          path: 'dashboard',
+          component: () => import('@/views/admin/pages/Dashboard.vue'),
+        },
+        {
+          path: 'users',
+          component: () => import('@/views/admin/pages/Users.vue'),
+        },
+      ],
     },
   ],
 })

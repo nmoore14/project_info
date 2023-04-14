@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@auth0/auth0-vue': ^2.2.0
   '@vitejs/plugin-vue': ^4.1.0
   autoprefixer: ^10.4.14
   daisyui: ^2.51.5
@@ -14,6 +15,7 @@ specifiers:
   vue-router: '4'
 
 dependencies:
+  '@auth0/auth0-vue': 2.2.0_vue-router@4.1.6
   daisyui: 2.51.5_j7yt3jd32cwenjqavrrga47yr4
   pinia: 2.0.34_vue@3.2.47
   primeicons: 6.0.1
@@ -29,6 +31,23 @@ devDependencies:
   vite: 4.2.1
 
 packages:
+
+  /@auth0/auth0-spa-js/2.0.4:
+    resolution: {integrity: sha512-NgD6Fkm5Xnbned1VjhEW8irm1/Y8AWtdSLexgLXNwwBVgfnYicCVBu8w75m2t+4QljXkTcI7IXVEFhVmxMuxaA==}
+    dev: false
+
+  /@auth0/auth0-vue/2.2.0_vue-router@4.1.6:
+    resolution: {integrity: sha512-a8kNj9wF/hJFD/izAZojOTNlny/sq3qvuV8KLUreoQ92uMQBYiHtuclVHbRqoYxl2bwCtFJccttEmyYW3gzHDA==}
+    peerDependencies:
+      vue-router: ^4.0.12
+    peerDependenciesMeta:
+      vue-router:
+        optional: true
+    dependencies:
+      '@auth0/auth0-spa-js': 2.0.4
+      vue: 3.2.47
+      vue-router: 4.1.6_vue@3.2.47
+    dev: false
 
   /@babel/helper-string-parser/7.19.4:
     resolution: {integrity: sha512-nHtDoQcuqFmwYNYPz3Rah5ph2p8PFeFCsZk9A/48dPc/rGocJ5J3hAAZ7pb76VWX3fZKu+uEr/FhH5jLx7umrw==}

@@ -10,14 +10,14 @@
         </ul>
       </div>
     </div>
-    <div class="flex-none gap-2">
+    <div class="flex-none gap-2" v-if="userAuth">
       <div class="form-control">
         <input type="text" placeholder="Search" class="input input-bordered" />
       </div>
       <div class="dropdown dropdown-end">
         <label tabindex="0" class="btn btn-ghost btn-circle avatar">
           <div class="w-10 rounded-full">
-            <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+            <img :src="user.picture" />
           </div>
         </label>
         <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
@@ -28,9 +28,24 @@
             </a>
           </li>
           <li><a>Settings</a></li>
-          <li><a>Logout</a></li>
+          <li><a @click="logout">Logout</a></li>
         </ul>
       </div>
     </div>
   </div>
 </template>
+
+<script setup>
+import { computed } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useUserStore } from '@/stores/userStore'
+
+const userStore = useUserStore()
+const { isAuthenticated, user } = storeToRefs(userStore)
+
+const userAuth = computed(() => isAuthenticated.value)
+const logout = () => {
+  userStore.logout()
+}
+
+</script>

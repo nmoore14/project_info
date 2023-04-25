@@ -6,11 +6,11 @@
         Dashboard
       </router-link>
       <div class="-ml-6 divider"></div>
-      <router-link to="/admin" class="pl-8 py-2 rounded-md hover:bg-base-100">
+      <router-link to="/admin/pages" class="pl-8 py-2 rounded-md hover:bg-base-100">
         <i class="pi pi-file mr-2"></i>
         Pages
       </router-link>
-      <router-link to="/admin" class="pl-8 py-2 rounded-md hover:bg-base-100">
+      <router-link to="/admin/layouts" class="pl-8 py-2 rounded-md hover:bg-base-100">
         <i class="pi pi-th-large mr-2"></i>
         Layouts
       </router-link>

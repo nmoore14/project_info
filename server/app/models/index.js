@@ -1,10 +1,13 @@
 const dbConfig = require("../config/db.config.js");
 
+console.log(dbConfig)
+debugger
+
 const Sequelize = require("sequelize");
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
   dialect: dbConfig.dialect,
-  port: dbConfig.port,
+  port: dbConfig.PORT,
   operatorsAliases: false,
 
   pool: {
@@ -14,3 +17,12 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
     idle: dbConfig.pool.idle
   }
 });
+
+const db = {};
+
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
+
+db.layouts = require('./layouts.model.js')(sequelize, Sequelize);
+
+module.exports = db;

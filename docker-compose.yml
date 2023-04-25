@@ -12,7 +12,15 @@ services:
       - $MYSQLDB_LOCAL_PORT:$MYSQLDB_DOCKER_PORT
     volumes:
       - db:/var/lib/mysql
-
+  phpmyadmin:
+    depends_on:
+      - mysqldb
+    image: phpmyadmin:latest
+    ports:
+      - 8001:80
+    environment:
+      - PMA_HOST=mysqldb
+      - PMA_PORT=3306
   app:
     depends_on:
       - mysqldb

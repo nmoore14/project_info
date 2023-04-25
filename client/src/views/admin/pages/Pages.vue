@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Users</h1>
+    <h1>Pages</h1>
     <div class="overflow-x-auto w-full">
       <table class="table w-full">
         <!-- head -->
@@ -11,9 +11,9 @@
                 <input type="checkbox" class="checkbox" />
               </label>
             </th>
-            <th>Name</th>
-            <th>Job</th>
-            <th>Favorite Color</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Layout</th>
             <th></th>
           </tr>
         </thead>
@@ -27,14 +27,8 @@
             </th>
             <td>
               <div class="flex items-center space-x-3">
-                <div class="avatar">
-                  <div class="mask mask-squircle w-12 h-12">
-                    <img src="https://lh3.googleusercontent.com/a/AGNmyxZw4eyL3ml8Cv23O0rM3jHflY9CqqqnxzQ9ZxgH=s96-c" alt="Avatar Tailwind CSS Component" />
-                  </div>
-                </div>
                 <div>
                   <div class="font-bold">Hart Hagerty</div>
-                  <div class="text-sm opacity-50">United States</div>
                 </div>
               </div>
             </td>
@@ -53,18 +47,15 @@
         <tfoot>
           <tr>
             <th></th>
-            <th>Name</th>
-            <th>Job</th>
-            <th>Favorite Color</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Layout</th>
             <th></th>
           </tr>
         </tfoot>
-
       </table>
     </div>
   </div>
 </template>
 
-<script setup></script>
-
-<style></style>
+<script></script>

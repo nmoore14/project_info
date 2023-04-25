@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Users</h1>
+    <h1>Layouts</h1>
     <div class="overflow-x-auto w-full">
       <table class="table w-full">
         <!-- head -->
@@ -11,15 +11,13 @@
                 <input type="checkbox" class="checkbox" />
               </label>
             </th>
-            <th>Name</th>
-            <th>Job</th>
-            <th>Favorite Color</th>
+            <th>Title</th>
+            <th>Description</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-          <!-- row 1 -->
-          <tr>
+          <tr v-for="(layout, index) in layouts">
             <th>
               <label>
                 <input type="checkbox" class="checkbox" />
@@ -27,23 +25,14 @@
             </th>
             <td>
               <div class="flex items-center space-x-3">
-                <div class="avatar">
-                  <div class="mask mask-squircle w-12 h-12">
-                    <img src="https://lh3.googleusercontent.com/a/AGNmyxZw4eyL3ml8Cv23O0rM3jHflY9CqqqnxzQ9ZxgH=s96-c" alt="Avatar Tailwind CSS Component" />
-                  </div>
-                </div>
                 <div>
-                  <div class="font-bold">Hart Hagerty</div>
-                  <div class="text-sm opacity-50">United States</div>
+                  <div class="font-bold">{{ layout.name }}</div>
                 </div>
               </div>
             </td>
             <td>
-              Zemlak, Daniel and Leannon
-              <br />
-              <span class="badge badge-ghost badge-sm">Desktop Support Technician</span>
+              {{ layout.description }}
             </td>
-            <td>Purple</td>
             <th>
               <button class="btn btn-ghost btn-xs">details</button>
             </th>
@@ -53,18 +42,33 @@
         <tfoot>
           <tr>
             <th></th>
-            <th>Name</th>
-            <th>Job</th>
-            <th>Favorite Color</th>
+            <th>Title</th>
+            <th>Description</th>
             <th></th>
           </tr>
         </tfoot>
-
       </table>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+  import { ref } from 'vue'
 
-<style></style>
+  const layouts = ref(null)
+  const API_BASE = "http://localhost:8080/api"
+
+  fetch(`${API_BASE}/layouts`)
+    .then(response => response.json())
+    .then((data) => {
+      layouts.value = data
+    })
+    .catch((err) => {
+      console.error(err)
+    })
+    .finally(() => {
+      console.log(layouts.value)
+    })
+
+  
+</script>

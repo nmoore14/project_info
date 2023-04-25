@@ -18,6 +18,14 @@ export default createRouter({
           component: () => import('@/views/admin/pages/Dashboard.vue'),
         },
         {
+          path: 'layouts',
+          component: () => import('@/views/admin/pages/Layouts.vue'),
+        },
+        {
+          path: 'pages',
+          component: () => import('@/views/admin/pages/Pages.vue'),
+        },
+        {
           path: 'users',
           component: () => import('@/views/admin/pages/Users.vue'),
         },

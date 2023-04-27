@@ -6,6 +6,10 @@ specifiers:
   '@vueup/vue-quill': ^1.1.1
   autoprefixer: ^10.4.14
   daisyui: ^2.51.5
+  grapesjs: ^0.21.1
+  grapesjs-blocks-basic: ^1.0.1
+  grapesjs-blocks-flexbox: ^0.1.1
+  grapesjs-preset-webpage: ^1.0.2
   pinia: ^2.0.34
   postcss: ^8.4.21
   postcss-import: ^15.1.0
@@ -20,6 +24,10 @@ dependencies:
   '@auth0/auth0-vue': 2.2.0_vue-router@4.1.6
   '@vueup/vue-quill': 1.1.1_vue@3.2.47
   daisyui: 2.51.5_j7yt3jd32cwenjqavrrga47yr4
+  grapesjs: 0.21.1
+  grapesjs-blocks-basic: 1.0.1
+  grapesjs-blocks-flexbox: 0.1.1_grapesjs@0.21.1
+  grapesjs-preset-webpage: 1.0.2
   pinia: 2.0.34_vue@3.2.47
   primeicons: 6.0.1
   quill-html-edit-button: 2.2.12
@@ -418,6 +426,19 @@ packages:
       postcss: 8.4.21
       postcss-value-parser: 4.2.0
 
+  /backbone-undo/0.2.6:
+    resolution: {integrity: sha512-AsfpNiljLXlk7TcffDUu3EAUq7CxWbyTNwARWrql5XTzN4vh6WzEEBZYaKK4kTTz+iW1tSzqUooaGRIwO83kWA==}
+    dependencies:
+      backbone: 1.4.1
+      underscore: 1.13.6
+    dev: false
+
+  /backbone/1.4.1:
+    resolution: {integrity: sha512-ADy1ztN074YkWbHi8ojJVFe3vAanO/lrzMGZWUClIP7oDD/Pjy2vrASraUP+2EVCfIiTtCW4FChVow01XneivA==}
+    dependencies:
+      underscore: 1.13.6
+    dev: false
+
   /balanced-match/1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
 
@@ -478,6 +499,14 @@ packages:
   /clone/2.1.2:
     resolution: {integrity: sha512-3Pe/CF1Nn94hyhIYpjtiLhdCoEoz0DqQ+988E9gmeEdQZlojxnOb74wctFyuwWQHzqyf9X7C7MG8juUpqBJT8w==}
     engines: {node: '>=0.8'}
+    dev: false
+
+  /codemirror-formatting/1.0.0:
+    resolution: {integrity: sha512-br9yM6eJI3pJHekEnoyHaBEb1B7XxxDjju+vRyBe8QGLp5saTIXXkZ+eFCTqXSAtI8QEZDFVEX2/SOjH2sVWRQ==}
+    dev: false
+
+  /codemirror/5.65.12:
+    resolution: {integrity: sha512-z2jlHBocElRnPYysN2HAuhXbO3DNB0bcSKmNz3hcWR2Js2Dkhc1bEOxG93Z3DeUrnm+qx56XOY5wQmbP5KY0sw==}
     dev: false
 
   /color-convert/2.0.1:
@@ -698,6 +727,33 @@ packages:
       minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
+
+  /grapesjs-blocks-basic/1.0.1:
+    resolution: {integrity: sha512-H0RnQ5eXl9JkJmr6VIJHhJvA3sPzsqzBeGu/psKN9TJSq+D+N0AwEV9tozuVvUEDSr2XM2O8twEq2MEukIXlNA==}
+    dev: false
+
+  /grapesjs-blocks-flexbox/0.1.1_grapesjs@0.21.1:
+    resolution: {integrity: sha512-TteRG7r14+j03kagaN/75l6r04Qd3YRBKCB8x1SZC4eH8L3BW29xXef9Svk7SD2j6/DPsketC2131xgpDv5dsQ==}
+    peerDependencies:
+      grapesjs: 0.x
+    dependencies:
+      grapesjs: 0.21.1
+    dev: false
+
+  /grapesjs-preset-webpage/1.0.2:
+    resolution: {integrity: sha512-5sCBqYZ6zAXdE6Qbn0VxPkEGCrs32pZ7JP+okbxioo+7br1Yp/NMzlBs8+WB13vgVre3CCI+gjzpkJ4xIPcmXg==}
+    dev: false
+
+  /grapesjs/0.21.1:
+    resolution: {integrity: sha512-gbOQtnF+lEHJBD5LnZ1FR7oMk3YjLP9S8IeH2pC2wUEEkvXocWIQxyiJCo9CkSUexHNDEIFZg6xDYVcpy0yPWg==}
+    dependencies:
+      backbone: 1.4.1
+      backbone-undo: 0.2.6
+      codemirror: 5.65.12
+      codemirror-formatting: 1.0.0
+      promise-polyfill: 8.3.0
+      underscore: 1.13.6
+    dev: false
 
   /has-property-descriptors/1.0.0:
     resolution: {integrity: sha512-62DVLZGoiEBDHQyqG4w9xCuZ7eJEwNmJRWw2VY84Oedb7WFcA27fiEVe8oUQx9hAUJ4ekurquucTGwsyO1XGdQ==}
@@ -995,6 +1051,10 @@ packages:
     resolution: {integrity: sha512-KDeO94CbWI4pKsPnYpA1FPjo79EsY9I+M8ywoPBSf9XMXoe/0crjbUK7jcQEDHuc0ZMRIZsxH3TYLv4TUtHmAA==}
     dev: false
 
+  /promise-polyfill/8.3.0:
+    resolution: {integrity: sha512-H5oELycFml5yto/atYqmjyigJoAo3+OXwolYiH7OfQuYlAqhxNvTfiNMbV9hsC6Yp83yE5r2KTVmtrG6R9i6Pg==}
+    dev: false
+
   /queue-microtask/1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
@@ -1172,6 +1232,10 @@ packages:
 
   /ts-interface-checker/0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
+
+  /underscore/1.13.6:
+    resolution: {integrity: sha512-+A5Sja4HP1M08MaXya7p5LvjuM7K6q/2EaC0+iovj/wOcMsTzMvDFbasi/oSapiwOlt252IqsKqPjCl7huKS0A==}
+    dev: false
 
   /update-browserslist-db/1.0.10_browserslist@4.21.5:
     resolution: {integrity: sha512-OztqDenkfFkbSG+tRxBeAnCVPckDBcvibKd35yDONx6OU8N7sqgwc7rCbkJ/WcYtVRZ4ba68d6byhC21GFh7sQ==}

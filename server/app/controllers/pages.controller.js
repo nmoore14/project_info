@@ -36,7 +36,28 @@ exports.findOne = (req, res) => {
 }
 
 // Update a page
-exports.update = (req, res) => {}
+exports.update = (req, res) => {
+  const id = req.params.id;
+  Page.update(req.body, {
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "Page was updated successfully."
+        });
+      } else {
+        res.send({
+          message: `Cannot update Page with id=${id}. Maybe Page was not found or req.body is empty!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error updating Page with id=" + id
+      });
+    });
+}
 
 // Delete a page
 exports.deleteOne = (req, res) => {}

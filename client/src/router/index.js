@@ -26,6 +26,10 @@ export default createRouter({
           component: () => import('@/views/admin/pages/Pages.vue'),
         },
         {
+          path: 'pageEditor/:id?',
+          component: () => import('@/views/admin/pages/PageEditor.vue'),
+        },
+        {
           path: 'users',
           component: () => import('@/views/admin/pages/Users.vue'),
         },

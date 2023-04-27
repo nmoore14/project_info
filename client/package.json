@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@auth0/auth0-vue": "^2.2.0",
+    "@vueup/vue-quill": "^1.1.1",
     "daisyui": "^2.51.5",
     "pinia": "^2.0.34",
     "primeicons": "^6.0.1",
+    "quill-html-edit-button": "^2.2.12",
     "vue": "^3.2.47",
     "vue-router": "4"
   },

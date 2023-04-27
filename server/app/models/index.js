@@ -24,5 +24,7 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.layouts = require('./layouts.model.js')(sequelize, Sequelize);
+db.layoutContent = require('./layoutContent.model.js')(sequelize, Sequelize);
+db.pages = require('./pages.model.js')(sequelize, Sequelize);
 
 module.exports = db;
